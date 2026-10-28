@@ -1,4 +1,5 @@
-// Real premium brands used by professional roofers in Perth & Western Australia
+"use client";
+
 const BRANDS = [
   { name: "COLORBOND", sub: "steel" },
   { name: "MONIER", sub: "roofing" },
@@ -24,8 +25,8 @@ export function Partners() {
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-white to-transparent" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-white to-transparent" />
 
-          {/* Scrolling Track */}
-          <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
+          {/* Scrolling Track - Changed from 60s to 80s for slower, premium feel */}
+          <div className="flex w-max animate-[marquee_80s_linear_infinite] hover:[animation-play-state:paused]">
             {/* Render brands twice to create a seamless infinite loop */}
             {[...BRANDS, ...BRANDS].map((brand, i) => (
               <div
