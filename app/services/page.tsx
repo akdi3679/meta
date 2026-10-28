@@ -158,8 +158,8 @@ export default function ServicesPage() {
               </div>
             </div>
 
-            {/* Right: Service List with Images */}
-            <div className="lg:col-span-8">
+            {/* Right: Service List with Images - Added w-full to constrain width */}
+            <div className="lg:col-span-8 w-full overflow-hidden">
               <div className="border-t border-gray-200">
                 {SERVICES.map((service) => (
                   <Link
