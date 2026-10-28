@@ -158,7 +158,7 @@ export default function ServicesPage() {
               </div>
             </div>
 
-            {/* Right: Service List with Images - Added w-full to constrain width */}
+            {/* Right: Service List with Images */}
             <div className="lg:col-span-8 w-full overflow-hidden">
               <div className="border-t border-gray-200">
                 {SERVICES.map((service) => (
@@ -167,10 +167,11 @@ export default function ServicesPage() {
                     href={`/services/${service.slug}`}
                     className="group block border-b border-gray-200 py-8 transition-colors duration-300 hover:bg-gray-50"
                   >
-                    <div className="flex items-start gap-6">
+                    {/* Mobile: Stack vertically | Desktop: Side by side */}
+                    <div className="flex flex-col md:flex-row items-start gap-6">
                       
-                      {/* Image Thumbnail */}
-                      <div className="flex-shrink-0 w-32 h-24 overflow-hidden rounded-lg bg-gray-100">
+                      {/* Image Thumbnail - Full width on mobile, fixed size on desktop */}
+                      <div className="w-full md:w-32 md:h-24 h-48 overflow-hidden rounded-lg bg-gray-100 flex-shrink-0">
                         <img 
                           src={service.image} 
                           alt={service.title}
@@ -178,43 +179,47 @@ export default function ServicesPage() {
                         />
                       </div>
 
-                      {/* Number */}
-                      <span className="text-3xl font-extralight tracking-tight text-blue-600/60 pt-1">
-                        {service.num}
-                      </span>
+                      {/* Content Container */}
+                      <div className="flex-1 w-full">
+                        {/* Header with number and arrow - Only show number on desktop */}
+                        <div className="flex items-start gap-4 mb-3">
+                          <span className="hidden md:block text-3xl font-extralight tracking-tight text-blue-600/60">
+                            {service.num}
+                          </span>
+                          
+                          <div className="flex-1">
+                            <div className="flex items-baseline justify-between gap-4 mb-2">
+                              <h3 className="text-xl font-bold text-navy-900 group-hover:text-blue-600 transition-colors">
+                                {service.title}
+                              </h3>
+                              <svg 
+                                className="h-5 w-5 text-gray-300 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0" 
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                              >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                              </svg>
+                            </div>
 
-                      {/* Content */}
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-baseline justify-between gap-4 mb-2">
-                          <h3 className="text-xl font-bold text-navy-900 group-hover:text-blue-600 transition-colors">
-                            {service.title}
-                          </h3>
-                          <svg 
-                            className="h-5 w-5 text-gray-300 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0" 
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                          >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                          </svg>
-                        </div>
+                            <p className="text-sm font-medium text-gray-500 mb-3">
+                              {service.subtitle}
+                            </p>
 
-                        <p className="text-sm font-medium text-gray-500 mb-3">
-                          {service.subtitle}
-                        </p>
+                            <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                              {service.desc}
+                            </p>
 
-                        <p className="text-sm text-gray-600 leading-relaxed mb-4">
-                          {service.desc}
-                        </p>
-
-                        {/* Tags */}
-                        <div className="flex flex-wrap gap-2">
-                          {service.tags.map((tag) => (
-                            <span 
-                              key={tag}
-                              className="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-blue-600"
-                            >
-                              {tag}
-                            </span>
-                          ))}
+                            {/* Tags */}
+                            <div className="flex flex-wrap gap-2">
+                              {service.tags.map((tag) => (
+                                <span 
+                                  key={tag}
+                                  className="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-blue-600"
+                                >
+                                  {tag}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
