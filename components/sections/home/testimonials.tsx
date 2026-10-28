@@ -8,42 +8,12 @@ interface Testimonial {
 }
 
 const TESTIMONIALS: Testimonial[] = [
-  {
-    rating: 5,
-    text: "The video evidence pack changed everything. Owners who had been blocking the work for over a year finally understood what was needed.",
-    author: "Sarah Jenkins",
-    role: "Strata Manager, Leederville"
-  },
-  {
-    rating: 5,
-    text: "Professional, safe, and incredibly thorough. The asbestos removal and re-roof were handled flawlessly, and the video documentation gave us total peace of mind.",
-    author: "Mark & David T.",
-    role: "Homeowners, Scarborough"
-  },
-  {
-    rating: 5,
-    text: "Our complicated Roman tile roof looks brand new. The before-and-after video proved the value of the restoration. Highly recommend their attention to detail.",
-    author: "Emma Rossi",
-    role: "Homeowner, Applecross"
-  },
-  {
-    rating: 5,
-    text: "Under 6 hours, rust treated, safety access system included, and fully documented. Meta Roofing is now our go-to for fast, reliable work.",
-    author: "Paul Nguyen",
-    role: "Property Manager, Victoria Park"
-  },
-  {
-    rating: 5,
-    text: "They water-tested the skylight on video before they left. Two winters later, not a single drop. Our hallway is transformed.",
-    author: "Sophie Turner",
-    role: "Homeowner, Canning Vale"
-  },
-  {
-    rating: 5,
-    text: "The summer special was a game-changer. The powder-coated Terminator vents dropped our ceiling temperatures noticeably, and the lifetime warranty is a huge bonus.",
-    author: "David Chen",
-    role: "Homeowner, Kelmscott"
-  }
+  { rating: 5, text: "The video evidence pack changed everything. Owners who had been blocking the work for over a year finally understood what was needed.", author: "Sarah Jenkins", role: "Strata Manager, Leederville" },
+  { rating: 5, text: "Professional, safe, and incredibly thorough. The asbestos removal and re-roof were handled flawlessly, and the video documentation gave us total peace of mind.", author: "Mark & David T.", role: "Homeowners, Scarborough" },
+  { rating: 5, text: "Our complicated Roman tile roof looks brand new. The before-and-after video proved the value of the restoration. Highly recommend their attention to detail.", author: "Emma Rossi", role: "Homeowner, Applecross" },
+  { rating: 5, text: "Under 6 hours, rust treated, safety access system included, and fully documented. Meta Roofing is now our go-to for fast, reliable work.", author: "Paul Nguyen", role: "Property Manager, Victoria Park" },
+  { rating: 5, text: "They water-tested the skylight on video before they left. Two winters later, not a single drop. Our hallway is transformed.", author: "Sophie Turner", role: "Homeowner, Canning Vale" },
+  { rating: 5, text: "The summer special was a game-changer. The powder-coated Terminator vents dropped our ceiling temperatures noticeably, and the lifetime warranty is a huge bonus.", author: "David Chen", role: "Homeowner, Kelmscott" }
 ];
 
 export function Testimonials() {
@@ -60,10 +30,7 @@ export function Testimonials() {
         </div>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {TESTIMONIALS.map((testimonial: Testimonial, index: number) => (
-            <div 
-              key={index} 
-              className="flex flex-col rounded-xl border border-gray-200 bg-gray-50 p-6 transition-all duration-300 hover:shadow-lg"
-            >
+            <div key={index} className="flex flex-col rounded-xl border border-gray-200 bg-gray-50 p-6 transition-all duration-300 hover:shadow-lg">
               <div className="mb-4 flex gap-1">
                 {[...Array(testimonial.rating)].map((_, i: number) => (
                   <svg key={i} className="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
