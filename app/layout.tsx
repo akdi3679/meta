@@ -48,7 +48,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main id="main" className="flex-1">{children}</main>
         <Footer />
-        <div className="h-16 md:hidden" aria-hidden />
         <FloatingCta />
       </body>
     </html>

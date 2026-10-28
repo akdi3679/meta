@@ -4,15 +4,11 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="relative bg-[linear-gradient(180deg,#05070D_0%,#0A1B33_100%)] text-white">
+    // Added pb-16 md:pb-0 to provide space for the FloatingCta on mobile without creating a white block
+    <footer className="relative bg-[linear-gradient(180deg,#05070D_0%,#0A1B33_100%)] text-white pb-16 md:pb-0">
       
-      {/* 
-        Static Overlapping Image Banner
-        - Reduced negative margin (-mt-12) to move it down more.
-        - Removed bg-white.
-        - Added pb-8 for spacing below the image.
-      */}
-      <div className="relative z-20 -mt-12 sm:-mt-16 w-full overflow-hidden pb-8">
+      {/* Moved image down by reducing negative margin from -mt-12 to -mt-4 */}
+      <div className="relative z-20 -mt-4 sm:-mt-8 w-full overflow-hidden pb-8">
         <img 
           src="/images/footer-banner.jpg" 
           alt="Meta Roofing & Co" 
@@ -23,7 +19,6 @@ export function Footer() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
-            {/* Logo without animation */}
             <img 
               src="/images/logo-light.png" 
               alt="Meta Roofing & Co" 
