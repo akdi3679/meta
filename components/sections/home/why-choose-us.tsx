@@ -42,12 +42,10 @@ export function WhyChooseUs() {
                 <span className="text-[10px] font-bold uppercase tracking-wider text-navy-900">Visual Proof</span>
               </div>
               
-              {/* ✅ UPDATED WITH YOUR EXACT IMAGE URLS */}
+              {/* ✅ FIX: Removed beforeLabel and afterLabel props */}
               <BeforeAfterSlider 
                 beforeImage="https://roofspray.com.au/wp-content/uploads/bb-plugin/cache/before-warranwood-resized-1-landscape-d75d103edc276d5e9821e756cd834674-679afa5c6953c.jpg" 
                 afterImage="https://roofspray.com.au/wp-content/uploads/bb-plugin/cache/after-warranwood-resized-1-landscape-9afeb44c7f53e91795a4245c5e0cc978-679afa6f560a4.jpg" 
-                beforeLabel="Before"
-                afterLabel="After"
               />
               
               <p className="mt-4 text-center text-xs font-medium text-gray-500">Drag the slider to see the transformation</p>
